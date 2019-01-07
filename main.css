@@ -1,0 +1,27 @@
+.main-block {
+    display: block;
+    width: 70%;
+    margin: auto;
+}
+
+.items-block {
+    display: none;
+}
+
+.empty-block {
+    display: none;
+}
+
+.search-block {
+    padding-bottom: 1em;
+}
+.search-input-block {
+    overflow: hidden;
+    padding-right: .5em;
+}
+.search-block input {
+    width: 100%;
+}
+.search-block button {
+    float: right;
+}

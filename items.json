@@ -1,0 +1,20 @@
+[
+    {
+        "time_start": "13:00:00",
+        "Name_channel": "First",
+        "time_end": "14:00:00",
+        "Name": "SpokiNoki"
+    },
+    {
+        "time_start": "14:00:00",
+        "Name_channel": "First",
+        "time_end": "15:00:00",
+        "Name": "News"
+    },
+    {
+        "time_start": "15:00:00",
+        "Name_channel": "Second",
+        "time_end": "18:00:00",
+        "Name": "Animals"
+    }
+]
