@@ -5,7 +5,7 @@ $( document ).ready(function() {
             console.log('ITEMS:', data, status);
         });
 
-        // console.log('click!');
-      });
+        
+    });
 
 });
