@@ -6,7 +6,7 @@ $( document ).ready( function() {
             $( ".load-block" ).removeClass( "display-none" );
         
         $.get("./items.json", function( data, status ){
-            console.log('ITEMS:', data, status, );
+            console.log('ITEMS:', data, status);
             var items = data || [];
 
             if(status == 'success' && items.length) {
