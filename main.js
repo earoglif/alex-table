@@ -1,9 +1,10 @@
-$( document ).ready( function() {
-    var nameChannel = $( "#searchInput" ).val() || "",
-            // server = "./items.json";
-            server = "http://localhost:8080/programm/" + nameChannel;
+$( document ).ready( function() {    
 
     var searchItems = function() {
+        var nameChannel = $( "#searchInput" ).val() || "",
+        server = "./items.json";
+        // server = "http://localhost:8080/programm/" + nameChannel;
+
         $.get(server, function( data, status ){
             console.log( 'ITEMS:', data, status, nameChannel );
             var items = data || [];
@@ -17,8 +18,8 @@ $( document ).ready( function() {
                     content += '<tr>';
                     content += '<td>' + items[i].Name + '</td>';
                     content += '<td>' + items[i].Name_channel + '</td>';
-                    content += '<td>' + items[i].time_end + '</td>';
                     content += '<td>' + items[i].time_start + '</td>';
+                    content += '<td>' + items[i].time_end + '</td>';
                     content += '</tr>';
                 }
 
@@ -41,4 +42,13 @@ $( document ).ready( function() {
         searchItems();
     });
 
+    $( document ).on( 'keypress', function(e) {
+        if(e.which == 13) {
+            $( ".items-block" ).removeClass( "display-block" );
+            $( ".empty-block" ).removeClass( "display-block" );
+            $( ".load-block" ).removeClass( "display-none" );
+            
+            searchItems();
+        }
+    });
 });
