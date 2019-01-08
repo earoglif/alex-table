@@ -2,6 +2,7 @@
     display: block;
     width: 70%;
     margin: auto;
+    max-width: 920px;
 }
 
 .items-block {

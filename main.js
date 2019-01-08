@@ -1,17 +1,15 @@
 $( document ).ready( function() {
+    var nameChannel = $( "#searchInput" ).val() || "",
+            // server = "./items.json";
+            server = "http://localhost:8080/programm/" + nameChannel;
 
-    $( "#searchBtn" ).click( function(){
-            $( ".items-block" ).removeClass( "display-block" );
-            $( ".empty-block" ).addClass( "display-none" );
-            $( ".load-block" ).removeClass( "display-none" );
-        
-        $.get("./items.json", function( data, status ){
-            console.log('ITEMS:', data, status);
+    var searchItems = function() {
+        $.get(server, function( data, status ){
+            console.log( 'ITEMS:', data, status, nameChannel );
             var items = data || [];
 
             if(status == 'success' && items.length) {
                 $( ".items-block" ).addClass( "display-block" );
-                $( ".empty-block" ).addClass( "display-none" );
                 $( ".load-block" ).addClass( "display-none" );
                 var content = '';
 
@@ -25,8 +23,22 @@ $( document ).ready( function() {
                 }
 
                 $('.items-block table tbody').html(content);
+            } else {
+                $( ".items-block" ).removeClass( "display-block" );
+                $( ".empty-block" ).addClass( "display-block" );
+                $( ".load-block" ).addClass( "display-none" );
             }
         });
+    }
+
+    searchItems();
+
+    $( "#searchBtn" ).click( function(){
+        $( ".items-block" ).removeClass( "display-block" );
+        $( ".empty-block" ).removeClass( "display-block" );
+        $( ".load-block" ).removeClass( "display-none" );
+        
+        searchItems();
     });
 
 });
