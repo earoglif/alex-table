@@ -2,8 +2,8 @@ $( document ).ready( function() {
 
     var searchItems = function() {
         var nameChannel = $( "#searchInput" ).val() || "",
-        server = "./items.json";
-        // server = "http://localhost:8080/programm/" + nameChannel;
+        // server = "./items.json";
+        server = "http://localhost:8080/programm/" + nameChannel;
 
         $.get(server, function( data, status ){
             console.log( 'ITEMS:', data, status, nameChannel );
