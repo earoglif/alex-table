@@ -1,3 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body a:hover {
+    text-decoration: underline;
+}
+
 .main-block {
     display: block;
     width: 70%;
@@ -27,7 +34,11 @@
     width: 100%;
 }
 .search-block button {
+    width: 100px;
     float: right;
+}
+#channelBtn{
+    margin-top: 8px;
 }
 
 .display-block {
@@ -47,14 +58,38 @@ table {
 table thead th {
     background-color: #DDEFEF;
     border: solid 1px #DDEEEE;
-    color: #336B6B;
+    color: rgb(76, 117, 117);
     padding: 10px;
     text-align: left;
-    text-shadow: 1px 1px 1px #fff;
+    font-size: 14px;
 }
 table tbody td {
     border: solid 1px #DDEEEE;
     color: #333;
     padding: 10px;
-    text-shadow: 1px 1px 1px #fff;
+}
+
+.channel-block{
+    display: none;
+}
+
+.channel-block ul {
+    padding-left: 20px;
+}
+.channel-block ul li {
+    list-style: decimal;
+    color: #006561;
+    font: normal 15px Arial, sans-serif;
+    margin: 5px;
+}
+.channel-block ul li a{
+    cursor: pointer;
+}
+
+.menu-block {
+    margin-bottom: 20px;
+}
+.menu-block a{
+    color: #006561;
+    text-decoration: none;
 }
