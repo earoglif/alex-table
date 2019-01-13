@@ -3,8 +3,8 @@ $( document ).ready( function() {
 
     var searchItems = function() {
         var nameChannel = $( "#searchInput" ).val() || "all",
-        server = "./items.json";
-        // server = "http://localhost:8080/programm/" + nameChannel;
+        // server = "./items.json";
+        server = "http://localhost:8080/programm/" + nameChannel;
 
         $.get(server, function( data, status ){
             console.log( 'ITEMS:', data, status, nameChannel );
@@ -60,8 +60,8 @@ $( document ).ready( function() {
 
 
     var getChannelList = function(){
-        // var server = "http://localhost:8080/programm/";
-        var server = "./channels.json";
+        var server = "http://localhost:8080/programm/";
+        // var server = "./channels.json";
         
         $.get(server, function( data, status ){
             console.log( 'ITEMS:', data, status );
